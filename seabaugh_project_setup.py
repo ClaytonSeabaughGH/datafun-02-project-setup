@@ -40,12 +40,50 @@ def create_folders_for_range(start_year, end_year: int) -> None:
 def create_folders_from_list(folder_list: int) -> None:
 
 # Function 3: Creates prefixed folders by combinging a list of names with a prefix
-def create_prefixed_folders(folder_list, prefix: str) -> None:
+def create_prefixed_folders(folder_list: list, prefix: str) -> None:
 
 # Function 4: A While Loop that creates folders periodically
 def create_folders_periodically(duration):
 
 
-# Define Main Function
+########### Define Main Function ###########
+
+def main():
+''' Main function to demonstrate module capabilities. '''
+
+# Print byline from imported module
+    print(f"Byline: {seabaugh_utils.byline}")
+
+    # Call function 1 to create folders for a range (e.g. years)
+    create_folders_for_range(start_year=2020, end_year=2023)
+
+    # Call function 2 to create folders given a list
+    folder_names = ['data-csv', 'data-excel', 'data-json']
+    create_folders_from_list(folder_names)
+
+    # Call function 3 to create folders using comprehension
+    folder_names = ['csv', 'excel', 'json']
+    prefix = 'data-'
+    create_prefixed_folders(folder_names, prefix)
+
+    # Call function 4 to create folders periodically using while
+    duration_secs = 5  # duration in seconds
+    create_folders_periodically(duration_secs)
+
+    # Add options e.g., to force lowercase and remove spaces 
+    # to one or more of your functions (e.g. function 2) 
+    regions = [
+      "North America", 
+      "South America", 
+      "Europe", 
+      "Asia", 
+      "Africa", 
+      "Oceania", 
+      "Middle East"
+    ]
+    create_folders_from_list(regions, to_lowercase=True, remove_spaces=True)
+
+
+
 
 # Conditional Script Execution
